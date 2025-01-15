@@ -2,7 +2,6 @@ const video5 = document.getElementsByClassName('input_video5')[0];
 const out5 = document.getElementsByClassName('output5')[0];
 const controlsElement5 = document.getElementsByClassName('control5')[0];
 const canvasCtx5 = out5.getContext('2d');
-
 const fpsControl = new FPS();
 
 const spinner = document.querySelector('.loading');
@@ -23,6 +22,7 @@ function onResultsPose(results) {
   canvasCtx5.clearRect(0, 0, out5.width, out5.height);
   canvasCtx5.drawImage(
       results.image, 0, 0, out5.width, out5.height);
+  console.log(POSE_LANDMARKS)
   drawConnectors(
       canvasCtx5, results.poseLandmarks, POSE_CONNECTIONS, {
         color: (data) => {
